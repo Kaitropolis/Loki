@@ -4,12 +4,12 @@
     {
         public int Id { get; set; }
 
-        public string? Name { get; set; }
+        public required string Name { get; set; }
 
-        public List<string> Continents { get; set; } = new List<string>();
+        public required List<string> Continents { get; set; }
 
-        public List<string> Habitat { get; set; } = new List<string>();
+        public required List<string> Habitat { get; set; }
 
-        public List<string> Food { get; set; } = new List<string>();
+        public required List<string> Food { get; set; }
     }
 }
