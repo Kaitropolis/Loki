@@ -12,6 +12,11 @@ namespace Loki.Endpoints
             app.MapGet("/import", ImportAnimals);
         }
 
+        /// <summary>
+        /// Reads animal data from csv file and converts it 
+        /// to a list of animal entities
+        /// </summary>
+        /// <returns>List of animal entities</returns>
         private static List<AnimalEntity> ImportAnimals()
         {
             using var reader = new StreamReader("C:\\Users\\kaist\\Desktop\\data\\animals.csv");
@@ -20,10 +25,7 @@ namespace Loki.Endpoints
 
             var animalRecords = csv.GetRecords<AnimalImportModel>().ToList();
 
-            // TODO: Convert records into a list of type AnimalEntity.
-            // Notice that the 3 comma separated strings Continents, Habitat and Food
-            // need to be converted to proper lists.
-            // Once converted, simply return the new list from this endpoint.            
+            var columnHeaders = csv.HeaderRecord; // CSV Column Headers i.e Name, Continents, Habitat
 
             var animals = animalRecords.ConvertAll(x => new AnimalEntity
             {
@@ -33,7 +35,7 @@ namespace Loki.Endpoints
                 Food = x.Food.Split(",").ToList(),
             });
 
-            // Alternative method
+            // Alternative method using a loop
             var animals2 = new List<AnimalEntity>();
 
             foreach (var record in animalRecords)
