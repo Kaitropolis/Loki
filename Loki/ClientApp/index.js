@@ -1,9 +1,8 @@
-const baseUrl = "https://localhost:7016"
+import { GetAnimals } from "./api/animal-client.js"
 
 async function displayTable() {
-    const response = await fetch(`${baseUrl}/import`);
-    const data = await response.json();
-    console.log(data);
+    const animals = await GetAnimals();
+    console.log(animals)
 }
 
 displayTable()

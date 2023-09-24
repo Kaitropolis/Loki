@@ -16,7 +16,7 @@ namespace Loki.Endpoints
         /// Reads animal data from csv file and converts it 
         /// to a list of animal entities
         /// </summary>
-        /// <returns>List of animal entities</returns>
+        /// <returns>List of animal entities with column headers</returns>
         private static List<AnimalEntity> ImportAnimals()
         {
             using var reader = new StreamReader("C:\\Users\\kaist\\Desktop\\data\\animals.csv");
@@ -36,7 +36,7 @@ namespace Loki.Endpoints
             });
 
             // Alternative method using a loop
-            var animals2 = new List<AnimalEntity>();
+            /*var animals2 = new List<AnimalEntity>();
 
             foreach (var record in animalRecords)
             {
@@ -49,7 +49,7 @@ namespace Loki.Endpoints
                 };
 
                 animals2.Add(animal);
-            }
+            }*/
 
             return animals;
         }

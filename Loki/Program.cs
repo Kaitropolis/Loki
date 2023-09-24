@@ -9,6 +9,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors();
 
+/*builder.Services.AddDbContext(options =>
+{
+    
+});*/
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
