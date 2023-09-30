@@ -1,9 +1,9 @@
-﻿namespace Loki.Entities
-{
-    public class AnimalEntity
-    {
-        public int Id { get; set; }
+﻿using Loki.Core.Entities.Common;
 
+namespace Loki.Entities
+{
+    public class AnimalEntity : BaseEntity
+    {
         public required string Name { get; set; }
 
         public required List<string> Continents { get; set; }

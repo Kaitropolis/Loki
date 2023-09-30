@@ -1,13 +1,14 @@
 ﻿using CsvHelper;
+using Loki.Core;
 using Loki.Entities;
 using Loki.Models;
 using System.Globalization;
 
 namespace Loki.Endpoints
 {
-    public static class ImportEndpoints
+    public sealed class ImportEndpoints : IEndpointDefinition
     {
-        public static void MapImportEndpoints(this IEndpointRouteBuilder app)
+        public void MapEndpoints(IEndpointRouteBuilder app)
         {
             app.MapGet("/import", ImportAnimals);
         }

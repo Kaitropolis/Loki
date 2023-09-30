@@ -4,6 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>6e928f90-70f1-4fb4-a65d-81afc6e42868</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,12 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Loki.Core\Loki.Core.csproj" />
+    <ProjectReference Include="..\Loki.Repositories\Loki.Repositories.csproj" />
+    <ProjectReference Include="..\Loki.Services\Loki.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loki", "Loki\Loki.csproj", "{343BF757-4830-4C51-8D76-3641F4750F20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loki", "Loki\Loki.csproj", "{343BF757-4830-4C51-8D76-3641F4750F20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loki.Repositories", "Loki.Repositories\Loki.Repositories.csproj", "{58B71735-500F-40FB-B39E-7C9F68439951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loki.Core", "Loki.Core\Loki.Core.csproj", "{31F5E825-D87A-4A23-A70B-A7DF48B08492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loki.Services", "Loki.Services\Loki.Services.csproj", "{0F15F3CE-84F3-4B80-8201-EFA9D2BC9885}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Loki.Database", "Loki.Database\Loki.Database.sqlproj", "{4AAC9FDD-28B5-4CF2-87A1-16C8DF3C9B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,24 @@ Global
 		{343BF757-4830-4C51-8D76-3641F4750F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{343BF757-4830-4C51-8D76-3641F4750F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{343BF757-4830-4C51-8D76-3641F4750F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B71735-500F-40FB-B39E-7C9F68439951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B71735-500F-40FB-B39E-7C9F68439951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B71735-500F-40FB-B39E-7C9F68439951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B71735-500F-40FB-B39E-7C9F68439951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F5E825-D87A-4A23-A70B-A7DF48B08492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F5E825-D87A-4A23-A70B-A7DF48B08492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F5E825-D87A-4A23-A70B-A7DF48B08492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F5E825-D87A-4A23-A70B-A7DF48B08492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F15F3CE-84F3-4B80-8201-EFA9D2BC9885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F15F3CE-84F3-4B80-8201-EFA9D2BC9885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F15F3CE-84F3-4B80-8201-EFA9D2BC9885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F15F3CE-84F3-4B80-8201-EFA9D2BC9885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAC9FDD-28B5-4CF2-87A1-16C8DF3C9B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAC9FDD-28B5-4CF2-87A1-16C8DF3C9B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAC9FDD-28B5-4CF2-87A1-16C8DF3C9B67}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4AAC9FDD-28B5-4CF2-87A1-16C8DF3C9B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAC9FDD-28B5-4CF2-87A1-16C8DF3C9B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAC9FDD-28B5-4CF2-87A1-16C8DF3C9B67}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

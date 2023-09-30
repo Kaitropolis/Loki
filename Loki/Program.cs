@@ -1,4 +1,6 @@
-using Loki.Endpoints;
+using Loki.Extensions;
+using Loki.Repositories.Extensions;
+using Loki.Services.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,12 +11,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors();
 
-/*builder.Services.AddDbContext(options =>
-{
-    
-});*/
+var connectionString = builder.Configuration.GetConnectionString("Loki");
+
+builder.Services.AddEndpointDefinitions();
+
+builder.Services.AddLokiRepositories(connectionString);
+
+builder.Services.AddLokiServices();
 
 var app = builder.Build();
+
+app.UseEndpointDefinitions();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -32,7 +39,5 @@ app.UseCors(options =>
 });
 
 app.UseHttpsRedirection();
-
-app.MapImportEndpoints();
 
 app.Run();
