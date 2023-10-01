@@ -21,5 +21,15 @@ namespace Loki.Repositories
         {
             return _entities.FindAsync(id);
         }
+
+        public async Task AddAsync(TEntity entity)
+        {
+            await _entities.AddAsync(entity);            
+        }
+
+        public async Task AddRangeAsync(IEnumerable<TEntity> entities)
+        {
+            await _entities.AddRangeAsync(entities);
+        }
     }
 }

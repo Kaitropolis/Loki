@@ -1,8 +1,5 @@
-﻿using CsvHelper;
-using Loki.Core;
-using Loki.Entities;
-using Loki.Models;
-using System.Globalization;
+﻿using Loki.Core;
+using Loki.Services;
 
 namespace Loki.Endpoints
 {
@@ -18,41 +15,11 @@ namespace Loki.Endpoints
         /// to a list of animal entities
         /// </summary>
         /// <returns>List of animal entities with column headers</returns>
-        private static List<AnimalEntity> ImportAnimals()
+        private static async Task<IResult> ImportAnimals(IImportService service)
         {
-            using var reader = new StreamReader("C:\\Users\\kaist\\Desktop\\data\\animals.csv");
+            await service.ImportAnimals();
 
-            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-
-            var animalRecords = csv.GetRecords<AnimalImportModel>().ToList();
-
-            var columnHeaders = csv.HeaderRecord; // CSV Column Headers i.e Name, Continents, Habitat
-
-            var animals = animalRecords.ConvertAll(x => new AnimalEntity
-            {
-                Name = x.Name,
-                Continents = x.Continents.Split(',').ToList(),
-                Habitat = x.Habitat.Split(",").ToList(),
-                Food = x.Food.Split(",").ToList(),
-            });
-
-            // Alternative method using a loop
-            /*var animals2 = new List<AnimalEntity>();
-
-            foreach (var record in animalRecords)
-            {
-                var animal = new AnimalEntity
-                {
-                    Name = record.Name,
-                    Continents = record.Continents.Split(',').ToList(),
-                    Habitat = record.Habitat.Split(",").ToList(),
-                    Food = record.Food.Split(",").ToList(),
-                };
-
-                animals2.Add(animal);
-            }*/
-
-            return animals;
+            return Results.Ok();
         }
     }
 }

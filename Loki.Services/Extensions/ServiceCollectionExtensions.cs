@@ -6,7 +6,7 @@ namespace Loki.Services.Extensions
     {
         public static void AddLokiServices(this IServiceCollection services)
         {
-
+            services.AddTransient<IImportService, ImportService>();
         }
     }
 }
