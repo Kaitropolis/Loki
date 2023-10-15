@@ -2,6 +2,7 @@
 using Loki.Entities;
 using Loki.Models;
 using Loki.Repositories;
+using Microsoft.AspNetCore.Http;
 using System.Globalization;
 
 namespace Loki.Services
@@ -17,9 +18,13 @@ namespace Loki.Services
             _animalRepository = unitOfWork.Animals;
         }
 
-        public async Task ImportAnimals()
+        public async Task ImportAnimals(IFormFile? importFile)
         {
-            using var reader = new StreamReader("C:\\Users\\kaist\\Desktop\\data\\animals.csv");
+            if (importFile is null) return;
+
+            var stream = importFile.OpenReadStream();
+
+            using var reader = new StreamReader(stream);
 
             using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
 

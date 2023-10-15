@@ -1,22 +1,22 @@
-import { GetAnimals } from "./api/animal-client.js"
+import { getAnimalsView } from "./api/animal-client.js"
+import { importAnimals } from "./api/import-client.js";
 
-async function displayTable() {
-    const animals = await GetAnimals();
-    console.log(animals)
-
+async function renderTable() {
+    const animalsView = await getAnimalsView();
     const tableContainer = document.getElementById("table-container")
+
     tableContainer.innerHTML = `<table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Animal</th>
-        <th scope="col">Continent</th>
+        <th scope="col">Name</th>
+        <th scope="col">Continents</th>
         <th scope="col">Habitat</th>
         <th scope="col">Food</th>
       </tr>
     </thead>
     <tbody>
-    ${animals.map((animal, index) => {
+    ${animalsView.animals.map((animal, index) => {
         return `<tr>
             <td scope="row">${index + 1}</td>
             <td>${animal.name}</td>
@@ -26,7 +26,20 @@ async function displayTable() {
         </tr>`
     })}
     </tbody>
-  </table>      `
+  </table>`
 }
 
-displayTable()
+renderTable()
+
+let importFile = null
+
+document.getElementById("import-file").addEventListener("change", (event) => {
+    importFile = event.target.files[0]
+})
+
+document.getElementById("import").addEventListener("click", onImportAnimalsClick)
+
+async function onImportAnimalsClick() {
+  if (!importFile) return
+  importAnimals(importFile)  
+}

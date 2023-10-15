@@ -1,6 +1,6 @@
 import { baseUrl } from "../config/server.js";
 
-export async function GetAnimals() {
-    const response = await fetch(`${baseUrl}/import`);
+export async function getAnimalsView() {
+    const response = await fetch(`${baseUrl}/animals`);
     return await response.json();
 }

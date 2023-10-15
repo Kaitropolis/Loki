@@ -1,7 +1,9 @@
-﻿namespace Loki.Services
+﻿using Microsoft.AspNetCore.Http;
+
+namespace Loki.Services
 {
     public interface IImportService
     {
-        Task ImportAnimals();
+        Task ImportAnimals(IFormFile? importFile);
     }
 }
