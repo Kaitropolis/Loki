@@ -19,9 +19,11 @@ async function renderTable() {
       ${animalsView.animals
         .map(
           (animal, index) => `
-                <tr>
+                <tr id="animal-table">
                     <td scope="row">${index + 1}</td>
-                    <td><a href="animal.html">${animal.name}</a></td>
+                    <td><a href="animal.html?id=${animal.id}">${
+            animal.name
+          }</a></td>
                     <td>${animal.continents}</td>
                     <td>${animal.habitat}</td>
                     <td>${animal.food}</td>
