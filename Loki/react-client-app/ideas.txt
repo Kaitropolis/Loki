@@ -1,0 +1,17 @@
+Animals can be user created and have stats i.e intelligence, power, speed, size etc
+Stats must be balanced and should be capped
+Maps interface to locate animal habitats
+
+Versus Mode:
+
+Users can have animals battle in various formats to see how they match up against one another
+Outcomes are decided based on stat matchups, characteristics and movesets
+Movesets could include ambush (tiger), charge (buffalo), gradual pursuit (wolves in groups)
+Stamina is depleted the longer an animal is on the field
+Battles take place in countries which determines the environment/climate
+Or more specific locations could be selected on a map based interface
+
+Countries Feature:
+
+List view - Map showing all countries, can select a country to navigate to details view
+Details view - Country info, map with country location pinpointed
